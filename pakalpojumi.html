@@ -8,25 +8,58 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <title>Pakalpojumi - J.J.Mežs</title>
+  <style>
+        body {
+            margin:0;
+            background:#FFFFFF;
+        }
+        #menuDemo { text-align:center; padding:30px 8px; }
+    </style>
 </head>
 
 <body>
-
   <header>
     <div class="container">
       <h1 <a href="index.html">
     <img src="images/jjmezscj.png" alt="J.J.Mežs Logo" width="254" height="214" class="logo">
 </a>
 </h1>
-      <div class="menubar-container">
-    <nav class="navbar">
-        <a href="index.html" class="active">Par mums</a>
-        <a href="mezs.html" class="active">Mežs</a>
-        <a href="pakalpojumi.html" class="active">Pakalpojumi</a>
-        <a href="contact.html" class="active">Kontakti</a>
-    </nav>
+     <div id="menuDemo">
+<!--start CssMenu-->
+<div class="menu-icon-wrapper">
+	<div class="menu-icon" onclick="toggleCssMenu(this)">
+		<div class="three-line">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
 </div>
-
+<div id="cssmenu">
+    <ul>
+        <li><a href="index.html">Par mums</a></li>
+        <li><a href="mezs.html">Mežs</a></li>
+        <li><a href="pakalpojumi.html">Pakalpojumi</a></li>
+        <li><a href="contact.html">Kontakti</a></li>
+        
+    </ul>
+</div>
+<script>
+    function toggleCssMenu(icon) {
+        var cssmenu = document.getElementById('cssmenu');
+        if (icon.className.indexOf('active') == -1) {
+            icon.className = 'menu-icon active';
+			cssmenu.style.display = "block";
+			setTimeout(function(){cssmenu.className = 'active';},0);            
+        }
+        else {
+            icon.className = 'menu-icon';
+			cssmenu.className = '';
+			setTimeout(function(){cssmenu.style.display = "none";},411); 
+        }
+    }
+</script>
+       
   </header>
 
   <section class="accord">
